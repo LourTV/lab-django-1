@@ -1,0 +1,33 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    		<title>Website</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	<body>
+	    <header class="jumbotron text-center">
+        <h1>WEBSITE</h1>
+        <p>A criação de um website😁</p>
+        <nav>
+        <a href="{% url 'website:home' %}"  type = "button" class="btn btn-info">Home</a>
+        <a href="{% url 'website:inicio' %}"  type = "button" class="btn btn-info">Início</a>
+        <a href="{% url 'website:sobre' %}"  type = "button" class="btn btn-info">Sobre</a>
+        </nav>
+        </header>
+        <footer>Feito por: Ricardo Lourenço</footer>
+        <article class="container">
+        <main class="col-sm-6">
+	    {% block main %}
+	    {% endblock main %}
+            <!-- layout.html -->
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+        </main>
+        <aside class="col-sm-6">
+        <img src="{% static 'website/images/fizz.png' %}">
+        </aside>
+        </article>
+	</body>
+</html>
